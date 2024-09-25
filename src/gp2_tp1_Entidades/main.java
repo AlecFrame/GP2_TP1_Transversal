@@ -1,5 +1,5 @@
 
-package gp2_tp1_transversal;
+package gp2_tp1_Entidades;
 
 public class main {
 
