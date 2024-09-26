@@ -1,15 +1,17 @@
 
-package gp2_tp_AccesoAData;
+package gp2_tp1_Entidades;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Alumno {
     private int idAlumno;
     private int dni;
     private String apellido;
     private String nombre;
-    private LocalDate fechaNac;
+    private LocalDate fechaNacimiento;
     private boolean estado;
+    private DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Alumno() {
     }
@@ -19,7 +21,7 @@ public class Alumno {
         this.idAlumno = idAlumno;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaNac = fechaNac;
+        this.fechaNacimiento = fechaNac;
         this.estado = activo;
     }
 
@@ -27,7 +29,7 @@ public class Alumno {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaNac = fechaNac;
+        this.fechaNacimiento = fechaNac;
         this.estado = activo;
     }
 
@@ -55,12 +57,12 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public LocalDate getFechaNac() {
-        return fechaNac;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFechaNac(LocalDate fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public boolean isEstado() {
@@ -81,6 +83,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return apellido+" "+nombre+", estado: "+((estado)? "activo":"inactivo");
+        return "idAlumno, dni, nombre, apellido, fechaNacimiento, estado\n"
+                +idAlumno+", "+dni+", "+nombre+", "+apellido+", "+fechaNacimiento.format(formato)+", "+estado;
     }
 }
