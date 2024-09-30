@@ -39,13 +39,11 @@ public class main {
         opcionesValidas.add("4");
         opcionesValidas.add("5");
         opcionesValidas.add("6");
-        opcionesValidas.add("7");
         opcionesValidas.add("mostrar");
         opcionesValidas.add("guardar");
         opcionesValidas.add("buscar");
         opcionesValidas.add("actualizar");
-        opcionesValidas.add("eliminar");
-        opcionesValidas.add("cambiarestado");
+        opcionesValidas.add("bajalogica");
         opcionesValidas.add("finalizar");
         // Variables que uso para cuendo se tenga que crear un nuevo alumno o actualizarlo
         String estados="";
@@ -74,9 +72,8 @@ public class main {
             System.out.println("// > (2|guardar) Guardar a un nuevo alumno en la base de datos");
             System.out.println("// > (3|buscar) Buscar por id a un alumno en la base de datos");
             System.out.println("// > (4|actualizar) Actualizar o modificar algun dato de un alumno por id");
-            System.out.println("// > (5|eliminar) Eliminar alumno mediante su id");
-            System.out.println("// > (6|cambiarestado) Cambiar el estado del alumno de activo a inactivo o diseversa por id");
-            System.out.println("// > (7|finalizar) Finalizar operacion\n//");
+            System.out.println("// > (5|bajalogica) Cambiar el estado del alumno de activo a inactivo o diseversa por id");
+            System.out.println("// > (6|finalizar) Finalizar operacion\n//");
             numeroValido = false;
             while (!numeroValido) {
                 System.out.print("Escriba o ingrese el número de la opcion que desee realizar: ");
@@ -256,7 +253,7 @@ public class main {
                     System.out.print("\n");
                     break;
                 }
-                case ("eliminar"): 
+                /*case ("eliminar"): 
                 case ("5"): {
                     System.out.println("\n/// - Eliminar alumno - /////");
                     numeroValido = false;
@@ -274,9 +271,9 @@ public class main {
                     alumno.eliminarAlumno(id);
                     System.out.print("\n");
                     break;
-                }
-                case ("cambiarestado"): 
-                case ("6"): {
+                }*/
+                case ("bajalogica"): 
+                case ("5"): {
                     System.out.println("\n/// - Cambiar estado de alumno - /////");
                     numeroValido = false;
                     while (!numeroValido) {
@@ -299,7 +296,7 @@ public class main {
                     break;
                 }
                 case ("finalizar"): 
-                case ("7"): {
+                case ("6"): {
                     seguir=false;
                 }
             }
